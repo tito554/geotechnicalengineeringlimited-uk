@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terzaghi and Vesic Bearing Capacity Calculator</title>
+<meta name="description" content="The ultimate bearing capacity qu and allowable bearing capacity qadm define the pressure that a footing can transmit to the ground without shear failure or">
+<meta name="theme-color" content="#2d1b4e">
+<link rel="canonical" href="https://geotechnicalengineeringlimited.uk/blog/calculators/capacidad-portante-terzaghi-vesic/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Terzaghi and Vesic Bearing Capacity Calculator">
+<meta property="og:description" content="Specialist geotechnical engineering services across the UK, including site investigation, soil mechanics, and slope stability analysis.">
+<meta property="og:url" content="https://geotechnicalengineeringlimited.uk/blog/calculators/capacidad-portante-terzaghi-vesic/">
+<meta property="og:site_name" content="Geotechnical Engineering Limited">
+<meta property="og:image" content="https://geotechnicalengineeringlimited.uk/img/calicatas-exploratorias-langen-3.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Terzaghi and Vesic Bearing Capacity Calculator">
+<meta name="twitter:description" content="Specialist geotechnical engineering services across the UK, including site investigation, soil mechanics, and slope stability analysis. Trusted expertise for complex ground conditions.">
+<meta name="twitter:image" content="https://geotechnicalengineeringlimited.uk/img/calicatas-exploratorias-langen-3.webp">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230A2540'/%3E%3Cpath d='M14 44 L24 30 L34 38 L44 22 L50 28' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "GeneralContractor", "name": "Geotechnical Engineering Limited United Kingdom", "description": "Specialist geotechnical engineering services across the UK, including site investigation, soil mechanics, and slope stability analysis. Trusted expertise for complex ground conditions.", "url": "https://geotechnicalengineeringlimited.uk/", "areaServed": {"@type": "City", "name": "United Kingdom"}, "address": {"@type": "PostalAddress", "addressLocality": "United Kingdom", "addressCountry": "United Kingdom"}, "email": "contact@geotechnicalengineeringlimited.uk", "priceRange": "$$"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Geotechnical Engineering · Geotechnical Engineering — United King", "url": "https://geotechnicalengineeringlimited.uk/", "description": "Specialist geotechnical engineering services across the UK, including site investigation, soil mechanics, and slope stability analysis. Trusted expertise for complex ground conditions.", "inLanguage": "en", "datePublished": "2026-05-31", "dateModified": "2026-05-31", "isPartOf": {"@type": "WebSite", "url": "https://geotechnicalengineeringlimited.uk/", "name": "Geotechnical Engineering Limited"}}</script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://geotechnicalengineeringlimited.uk/#organization", "name": "Geotechnical Engineering Limited", "url": "https://geotechnicalengineeringlimited.uk/", "logo": "https://geotechnicalengineeringlimited.uk/img/logo.png", "email": "contact@geotechnicalengineeringlimited.uk", "address": {"@type": "PostalAddress", "addressCountry": "United Kingdom"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": 4.7, "reviewCount": 36, "bestRating": 5, "worstRating": 1}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://geotechnicalengineeringlimited.uk/#website", "name": "Geotechnical Engineering Limited", "url": "https://geotechnicalengineeringlimited.uk/", "inLanguage": "en", "publisher": {"@id": "https://geotechnicalengineeringlimited.uk/#organization"}, "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://geotechnicalengineeringlimited.uk/?s={search_term_string}"}, "query-input": "required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is geotechnical engineering and why is it important in the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Geotechnical engineering assesses ground conditions to design safe foundations, slopes, and retaining structures. In the UK, variable geology and historical land use make thorough site investigation critical to avoid costly failures and ensure compliance with Eurocode 7."}}, {"@type": "Question", "name": "What standards govern geotechnical work in the United Kingdom?", "acceptedAnswer": {"@type": "Answer", "text": "Geotechnical design in the UK follows Eurocode 7 (BS EN 1997) and its National Annex. Ground investigations comply with BS 5930, and SPT testing adheres to ASTM D1586. These standards ensure consistent, reliable results across the country."}}, {"@type": "Question", "name": "How does your firm approach slope stability analysis?", "acceptedAnswer": {"@type": "Answer", "text": "Our firm uses limit equilibrium and finite element methods to evaluate slope stability, considering soil shear strength, groundwater, and surcharge loads. We apply partial factors per Eurocode 7 to deliver safe, economical designs for natural and engineered slopes."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "@id": "https://geotechnicalengineeringlimited.uk/equipo/william-sutcliffe/#person", "name": "William Sutcliffe", "jobTitle": "Senior Geotechnical Consultant", "image": "https://geotechnicalengineeringlimited.uk/img/headshot_intl_geotechnicalengineeringlimited-uk.webp", "worksFor": {"@type": "Organization", "name": "Geotechnical Engineering Limited", "url": "https://geotechnicalengineeringlimited.uk"}, "url": "https://geotechnicalengineeringlimited.uk/equipo/william-sutcliffe/"}</script>
+
+<meta name="layout" content="L6">
+<link rel="preload" as="image" href="img/calicatas-exploratorias-langen-3.webp" fetchpriority="high">
+<style>
+
+:root{
+ --primary:#2d1b4e;
+ --accent:#8b5cf6;
+ --bg:#faf8fc;
+ --surface:#fff;
+ --text:#1d1530;
+ --border:#ede9f5;
+ --muted:#64748b;
+ --font-body:'Inter',-apple-system,sans-serif;
+ --font-h:'Lora',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);line-height:1.65;color:var(--text);background:var(--bg)}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Prose links — links dentro del contenido principal SIEMPRE visibles (underline + accent) */
+main section.block p a, main section.block li a, .cierre a {
+ color: var(--accent);
+ text-decoration: underline;
+ text-decoration-thickness: 1px;
+ text-underline-offset: 2px;
+ font-weight: 500;
+}
+main section.block p a:hover, main section.block li a:hover, .cierre a:hover {
+ text-decoration-thickness: 2px;
+ color: var(--primary);
+}
+.container{max-width:1400px;margin:0 auto;padding:0 24px}
+header{background:var(--primary);color:#fff;padding:18px 0;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+header .container{display:flex;align-items:center;justify-content:space-between;gap:20px}
+header .brand-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+header .brand-link:hover{text-decoration:none}
+header .logo{flex-shrink:0;filter:drop-shadow(0 1px 3px rgba(0,0,0,.3))}
+header .brand-line{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;line-height:1.1}
+header .brand-name{font-family:var(--font-h);font-size:1.18rem;font-weight:700;letter-spacing:.02em;color:#fff}
+header .brand-sep{color:#64748b;font-weight:300}
+header .brand-sub{font-size:.78rem;font-weight:400;color:#cbd5e1;letter-spacing:.02em}
+@media(max-width:560px){header .brand-sep,header .brand-sub{display:none}}
+header .navbar{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+header .nav-link{color:#e2e8f0;padding:8px 14px;border-radius:6px;font-size:.92rem;font-weight:500;transition:background .15s,color .15s;text-decoration:none;background:transparent;border:none;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:4px}
+header .nav-link:hover,header .nav-link[aria-expanded="true"]{background:rgba(255,255,255,.1);color:#fff;text-decoration:none}
+header .nav-dd{position:relative}
+header .dd-arrow{font-size:.7rem;opacity:.8;transition:transform .15s}
+header .nav-link[aria-expanded="true"] .dd-arrow{transform:rotate(180deg)}
+header .dd-menu{position:absolute;top:calc(100% + 6px);left:0;background:#fff;min-width:240px;border-radius:8px;box-shadow:0 8px 28px rgba(0,0,0,.18);padding:6px 0;display:none;z-index:1000;border:1px solid rgba(0,0,0,.06)}
+header .nav-dd.open .dd-menu{display:block}
+header .dd-menu a{display:block;padding:10px 18px;color:#1f2937;font-size:.92rem;text-decoration:none;transition:background .12s}
+header .dd-menu a:hover{background:#f3f4f6;color:var(--primary);text-decoration:none}
+header .dd-menu a{display:flex!important;align-items:center;justify-content:space-between;gap:14px}
+header .hub-badge{display:inline-block;background:color-mix(in srgb, var(--accent) 18%, #fff 82%);color:var(--primary);font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:11px;line-height:1.4}
+header .nav-burger{display:none;background:transparent;border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 12px;border-radius:6px;font-size:1.1rem;cursor:pointer}
+@media(max-width:780px){
+ header .container{flex-wrap:wrap}
+ header .nav-burger{display:inline-block}
+ header .navbar{display:none;width:100%;margin-top:14px;flex-direction:column;align-items:stretch;gap:2px;background:rgba(0,0,0,.15);padding:10px;border-radius:8px}
+ body.nav-open header .navbar{display:flex}
+ header .nav-dd{width:100%}
+ header .dd-menu{position:static;box-shadow:none;background:rgba(255,255,255,.04);border:none;padding:0;margin-top:4px}
+ header .dd-menu a{color:#e2e8f0;padding:8px 18px}
+ header .dd-menu a:hover{background:rgba(255,255,255,.08);color:#fff}
+}
+.hero{background:linear-gradient(180deg,var(--primary) 0%,color-mix(in srgb, var(--primary) 80%, var(--accent) 20%) 100%);color:#fff;padding:36px 0 50px}
+.hero h1{font-family:var(--font-h);font-size:2.1rem;line-height:1.25;font-weight:700;margin-bottom:12px;max-width:1280px}
+.hero p.subtitle{font-size:1.05rem;color:#cbd5e1;max-width:1100px;margin-bottom:18px}
+.breadcrumb{padding:0 0 14px;font-size:.85rem;color:#cbd5e1;background:transparent;border:none}
+.breadcrumb a{color:#93c5fd;text-decoration:none}
+.breadcrumb a:hover{color:#fff;text-decoration:underline}
+.breadcrumb span{color:#fff;font-weight:500}
+.block{background:var(--surface);border-radius:10px;padding:26px 30px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.04);border:1px solid var(--border);overflow:hidden}
+.block::after{content:'';display:table;clear:both}
+h2{font-family:var(--font-h);font-size:1.45rem;color:var(--primary);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--border);font-weight:700}
+h3{font-family:var(--font-h);font-size:1.1rem;color:var(--primary);margin:14px 0 8px;font-weight:600}
+p{margin-bottom:12px;color:var(--text)}
+/* hero/inline img v3 — float right + cap dimensiones (anti-explotación portrait) */
+section.block{overflow:auto}
+section.block .hero-img-wrap{float:right;max-width:340px;width:340px;max-height:280px;margin:6px 0 16px 24px;overflow:hidden;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.10);display:block}
+section.block .hero-img-wrap img{max-width:100%;max-height:280px;width:100%;height:280px;object-fit:cover;display:block;border-radius:10px}
+.inline-img{float:right;max-width:300px;width:300px;max-height:220px;margin:6px 0 18px 20px;overflow:hidden;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.10)}
+.inline-img img{max-width:100%;max-height:220px;width:100%;height:220px;object-fit:cover;display:block;border-radius:10px}
+section.block h2{clear:both;margin-top:0}
+@media (max-width:768px){
+ section.block{overflow:visible}
+ section.block .hero-img-wrap{float:none;width:100%;max-width:100%;max-height:240px;margin:18px auto}
+ section.block .hero-img-wrap img{height:240px;max-height:240px}
+ .inline-img{float:none;width:100%;max-width:100%;max-height:220px;margin:18px auto}
+}
+main img:not([class]){max-width:100%;height:auto}
+@media(max-width:680px){.inline-img{float:none;width:100%;max-width:100%;margin:18px auto}}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem;border-radius:6px;overflow:hidden}
+table th{background:var(--primary);color:#fff;padding:12px 14px;text-align:left;font-weight:600;font-size:.9rem;text-transform:uppercase;letter-spacing:.04em}
+table td{padding:10px 14px;border-bottom:1px solid var(--border)}
+table tr:nth-child(even) td{background:color-mix(in srgb, var(--bg) 50%, #f8fafc 50%)}
+.norm-list{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.norm-list li{background:color-mix(in srgb, var(--accent) 8%, #fff 92%);color:var(--primary);padding:8px 14px;border-radius:6px;border-left:3px solid var(--primary);font-family:ui-monospace,monospace;font-size:.92rem}
+.faq details{background:color-mix(in srgb, var(--bg) 60%, #f8fafc 40%);padding:14px 18px;margin-bottom:8px;border-radius:8px;border-left:3px solid var(--primary)}
+.faq summary{font-weight:600;cursor:pointer;color:var(--primary);font-size:1.02rem;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';float:right;font-size:1.4rem;line-height:1;color:var(--muted)}
+.faq details[open] summary::after{content:'−'}
+.faq details[open] p{margin-top:12px;color:var(--text)}
+#mapa-ciudad{height:340px;border-radius:8px;border:1px solid var(--border);z-index:1}
+.sidebar h3{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px;font-weight:600}
+.sidebar ul{list-style:none}
+.sidebar li{margin-bottom:6px}
+.sidebar a{color:var(--primary);font-size:.93rem;display:block;padding:8px 10px;border-radius:5px;transition:background .12s}
+.sidebar a:hover{background:color-mix(in srgb, var(--accent) 10%, #fff 90%);text-decoration:none}
+.cierre{background:color-mix(in srgb, var(--accent) 8%, #fff 92%);padding:20px 26px;border-radius:8px;border-left:4px solid var(--primary);margin-top:24px;color:var(--text);font-style:italic}
+.author-byline{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--primary);padding:14px 18px;border-radius:8px;display:flex;align-items:center;gap:14px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.author-byline img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--border)}
+.author-byline .author-info{flex:1;min-width:0}
+.author-byline .author-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.author-byline .author-name{font-size:1rem;font-weight:700;color:var(--primary);display:block;text-decoration:none;line-height:1.3}
+.author-byline .author-title{font-size:.82rem;color:var(--muted);margin-top:2px}
+.author-byline .author-date{font-size:.72rem;color:var(--muted);text-align:right;line-height:1.5;flex-shrink:0}
+@media(max-width:560px){.author-byline{flex-wrap:wrap}.author-byline .author-date{text-align:left;width:100%;margin-top:8px;border-top:1px solid var(--border);padding-top:8px}}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
+.service-card{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;background:var(--bg);border-radius:8px;border:1px solid var(--border);text-decoration:none;color:var(--primary);transition:transform .15s,box-shadow .15s,border-color .15s}
+.service-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08);border-color:var(--accent);text-decoration:none}
+.service-card .card-title{font-weight:600;font-size:1.02rem}
+.service-card .card-arrow{font-size:1.3rem;color:var(--accent)}
+.sat-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sat-chip{display:inline-flex;align-items:center;padding:7px 14px;background:color-mix(in srgb, var(--accent) 7%, #fff 93%);border:1px solid var(--border);border-radius:18px;color:var(--primary);font-size:.9rem;text-decoration:none;transition:background .12s,border-color .12s,transform .12s}
+.sat-chip:hover{background:color-mix(in srgb, var(--accent) 14%, #fff 86%);border-color:var(--accent);text-decoration:none;transform:translateY(-1px)}
+.sat-to-hub{display:flex;align-items:center;justify-content:space-between;gap:14px;background:color-mix(in srgb, var(--primary) 6%, #fff 94%);border-left:4px solid var(--primary);padding:14px 22px;border-radius:6px;margin:0 0 22px;font-size:.95rem;flex-wrap:wrap}
+.sat-to-hub-label{color:var(--text)}
+.sat-to-hub-link{color:var(--primary);font-weight:600;text-decoration:none;white-space:nowrap}
+.sat-to-hub-link:hover{text-decoration:underline}
+.cta-block,section.block.cta-block{background:linear-gradient(135deg, var(--primary) 0%, color-mix(in srgb, var(--primary) 70%, var(--accent) 30%) 100%)!important;color:#fff!important;border:none!important;padding:36px 40px!important;text-align:center!important;border-radius:12px!important;box-shadow:0 4px 18px rgba(0,0,0,.12)!important;margin:32px auto!important;border-top:none!important;max-width:760px!important}
+.cta-block .cta-inner{margin:0 auto;max-width:600px;text-align:center}
+@media(max-width:900px){.cta-block,section.block.cta-block{max-width:100%!important}}
+.cta-block h2,section.block.cta-block h2{color:#fff!important;border-bottom:none!important;padding-bottom:0!important;font-size:1.55rem!important;margin-bottom:10px!important;text-shadow:0 1px 2px rgba(0,0,0,.15)!important}
+.cta-block h2::after,section.block.cta-block h2::after{display:none!important;content:none!important}
+.cta-block p,section.block.cta-block p{color:#e2e8f0!important;margin-bottom:18px!important;font-size:1rem!important;max-width:none!important}
+.cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.cta-wa,.cta-email{display:inline-block;padding:12px 24px;border-radius:8px;font-weight:600;text-decoration:none;font-size:.95rem;transition:transform .12s,box-shadow .12s}
+.cta-wa{background:#25d366;color:#fff}
+.cta-wa:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,211,102,.4);text-decoration:none}
+.cta-email{background:#fff;color:var(--primary)}
+.cta-email:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(255,255,255,.2);text-decoration:none}
+.cta-email-note{font-size:.85rem;color:#cbd5e1;margin-top:8px;margin-bottom:0}
+.cta-email-note a{color:#93c5fd}
+.cta-email-note a:hover{color:#fff}
+/* Cities chips (S4) — internal linking bottom-of-page */
+.city-chips-section{margin:30px auto 24px;max-width:1200px}
+.city-chips-section > h2{font-family:var(--font-h);font-size:1.35rem;color:var(--primary);margin-bottom:18px;padding-bottom:8px;border-bottom:2px solid var(--border);font-weight:700}
+.city-chips-zone{margin-bottom:18px}
+.city-chips-zone:last-child{margin-bottom:0}
+.city-chips-zone-title{font-family:var(--font-h);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px;font-weight:700;border:none;padding:0}
+.city-chips-row{display:flex;flex-wrap:wrap;gap:8px}
+.city-chip{display:inline-flex;align-items:center;padding:7px 14px;background:color-mix(in srgb, var(--accent) 6%, #fff 94%);border:1px solid var(--border);border-radius:18px;color:var(--primary);font-size:.9rem;text-decoration:none;transition:background .12s,border-color .12s,transform .12s,box-shadow .12s;font-weight:500;line-height:1.2;white-space:nowrap}
+.city-chip:hover{background:color-mix(in srgb, var(--accent) 14%, #fff 86%);border-color:var(--accent);color:var(--primary);text-decoration:none;transform:translateY(-1px);box-shadow:0 2px 6px rgba(0,0,0,.06)}
+@media(max-width:560px){.city-chip{font-size:.85rem;padding:6px 12px}}
+footer{background:var(--primary);color:#cbd5e1;padding:36px 0;margin-top:50px}
+footer .container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;align-items:start}
+footer h4{color:#fff;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+footer p,footer a{color:#cbd5e1;font-size:.88rem;line-height:1.7}
+footer a:hover{color:#fff}
+footer .copyr{grid-column:1/-1;border-top:1px solid color-mix(in srgb, var(--primary) 60%, #fff 40%);padding-top:18px;text-align:center;color:#94a3b8;font-size:.82rem}
+footer .footer-designer-credit{color:#94a3b8;font-size:.78rem;margin-top:8px;font-style:italic}
+
+
+.fw-layout{padding:0}
+.fw-layout main{min-width:0}
+.fw-layout .block{padding:48px max(24px, calc((100% - 1280px) / 2));background:transparent;border:none;border-radius:0;box-shadow:none;margin:0}
+.fw-layout .block > *{max-width:1280px;margin-left:auto;margin-right:auto}
+.fw-layout .block:nth-of-type(odd){background:var(--bg)}
+.fw-layout .block:nth-of-type(even){background:var(--surface)}
+.fw-layout h2{font-size:1.7rem;text-align:center;border-bottom:none;padding-bottom:0;margin-bottom:18px}
+.fw-layout h2::after{content:'';display:block;width:60px;height:3px;background:var(--primary);margin:12px auto 0;border-radius:2px}
+.fw-layout table{max-width:1100px;margin:18px auto}
+.fw-layout .norm-list{justify-content:center}
+.fw-layout details{max-width:1100px;margin:8px auto}
+.fw-layout .author-byline{max-width:1100px;margin:24px auto}
+.fw-layout .cierre{max-width:1100px;margin:32px auto}
+
+</style>
+
+<link rel="stylesheet" href="/calc-scoped.css">
+<style id="ftr-fix">footer .container>div{min-width:0}footer p,footer a{overflow-wrap:anywhere;word-break:break-word}</style></head>
+<body>
+<header>
+<div class="container">
+<a class="brand-link" href="/">
+<svg class="logo" width="38" height="38" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+ <defs>
+ <linearGradient id="lg210" x1="0" y1="0" x2="1" y2="1">
+ <stop offset="0%" stop-color="var(--accent)"/>
+ <stop offset="100%" stop-color="var(--primary)"/>
+ </linearGradient>
+ </defs>
+ <rect x="4" y="4" width="56" height="56" rx="10" fill="url(#lg210)"/>
+ <path d="M14 44 L24 30 L34 38 L44 22 L50 28" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <circle cx="24" cy="30" r="3" fill="#fff"/>
+ <circle cx="34" cy="38" r="3" fill="#fff"/>
+ <circle cx="44" cy="22" r="3" fill="#fff"/>
+</svg>
+<div class="brand-line">
+ <span class="brand-name">Geotechnical Engineering Limited</span>
+ <span class="brand-sep">·</span>
+ <span class="brand-sub">Geotechnical Engineering</span>
+</div>
+</a>
+<nav class="navbar" aria-label="principal">
+<a href="/" class="nav-link">Home</a><a class="nav-link" href="/calculators/">Calculators</a>
+<div class="nav-dd"><button class="nav-link nav-toggle" aria-haspopup="true" aria-expanded="false">Services<span class="dd-arrow">▾</span></button><div class="dd-menu" role="menu"><a href="/spt-boring/" role="menuitem">SPT Boring</a><a href="/soil-mechanics-laboratory/" role="menuitem">Soil Mechanics Laboratory</a><a href="/slope-stability/" role="menuitem">Slope Stability</a><a href="/retaining-wall-design/" role="menuitem">Retaining Wall Design</a></div></div>
+<div class="nav-dd"><button class="nav-link nav-toggle" aria-haspopup="true" aria-expanded="false">Coverage<span class="dd-arrow">▾</span></button><div class="dd-menu" role="menu"><a href="/geotechnical-engineering-in-glasgow/" role="menuitem" class="hub-main"><strong>Glasgow</strong></a><a href="/geotechnical-engineering-in-cardiff/" role="menuitem" class="hub-main"><strong>Cardiff</strong></a><a href="/geotechnical-engineering-in-belfast/" role="menuitem" class="hub-main"><strong>Belfast</strong></a><a href="/geotechnical-engineering-in-london/" role="menuitem" class="hub-main"><strong>London</strong></a><a href="/geotechnical-engineering-in-bristol/" role="menuitem" class="hub-main"><strong>Bristol</strong></a><a href="/geotechnical-engineering-in-birmingham/" role="menuitem" class="hub-main"><strong>Birmingham</strong></a><a href="/geotechnical-engineering-in-manchester/" role="menuitem" class="hub-main"><strong>Manchester</strong></a><a href="/geotechnical-engineering-in-leeds/" role="menuitem" class="hub-main"><strong>Leeds</strong></a></div></div>
+<a href="/equipo/william-sutcliffe/" class="nav-link">Team</a>
+</nav>
+<button class="nav-burger" aria-label="menú" onclick="document.body.classList.toggle('nav-open')">☰</button>
+</div>
+</header>
+<main>
+<nav aria-label="breadcrumb" style="max-width:900px;margin:1.4rem auto 0;padding:0 1.5rem;font-size:.85rem;color:#64748b"><a href="/" style="color:inherit;text-decoration:none">Home</a> &rsaquo; <span>Terzaghi and Vesic Bearing Capacity Calculator</span></nav>
+<article class="calc-scope" style="max-width:900px;margin:0 auto;padding:1.5rem">
+<h1>Terzaghi and Vesic Bearing Capacity Calculator</h1>
+
+<p class="lead">The ultimate bearing capacity qu and allowable bearing capacity qadm define the pressure that a footing can transmit to the ground without shear failure or excessive settlement. This calculator applies the general Terzaghi (1943) formula with extensions by Vesic (1973) and Meyerhof, incorporating shape, depth, and load inclination factors. Compatible with the design criteria of BS EN 1997-1 (Eurocode 7) and common practice in building construction.</p>
+
+<h2>What is it and when is it applied?</h2>
+<p>Bearing capacity applies to shallow foundations (isolated, strip, combined) and, with adaptations, to raft foundations. It defines the maximum load per unit area before general shear failure of the soil. In practice, qu is divided by a factor of safety (typically 3.0 static and 2.0 seismic according to BS EN 1997-1) to obtain qadm. The calculation is sensitive to c, φ, γ, embedment depth, geometry, and the presence of a water table.</p>
+
+<h2>Applied Formulas</h2>
+<div class="formulas">
+<p><strong>Terzaghi (strip footing, ideal soil):</strong></p>
+<p>qu = c·Nc + q·Nq + 0.5·γ·B·Nγ</p>
+<p><strong>Generalised Vesic:</strong> qu = c·Nc·sc·dc·ic + q·Nq·sq·dq·iq + 0.5·γ·B·Nγ·sγ·dγ·iγ</p>
+<p><strong>Capacity factors (Vesic):</strong></p>
+<p>Nq = e^(π·tan φ) · tan²(45 + φ/2)</p>
+<p>Nc = (Nq − 1) / tan φ (or 5.14 if φ = 0)</p>
+<p>Nγ = 2 · (Nq + 1) · tan φ</p>
+<p><strong>Shape factors (Vesic):</strong> sc = 1 + (B/L)(Nq/Nc), sq = 1 + (B/L) tan φ, sγ = 1 − 0.4 (B/L)</p>
+<p><strong>Depth factors:</strong> dq = 1 + 2 tan φ (1 − sin φ)² · (Df/B); dc = dq − (1 − dq)/(Nc tan φ); dγ = 1.</p>
+<p><strong>Allowable capacity:</strong> qadm = (qu − γ·Df) / FS + γ·Df (net allowable load)</p>
+</div>
+
+<div class="calc-split-layout">
+<section class="calc-widget" aria-label="Interactive Terzaghi/Vesic bearing capacity calculator">
+<h2>Calculate online</h2>
+<p class="calc-intro">Enter geometry and soil parameters to obtain qult and qadm. <strong>The factor of safety is automatically adjusted</strong> according to the standard of the country you select on the right.</p>
+<form id="calc-form" novalidate>
+
+<div class="calc-section">
+ <h3 class="calc-section-title">Foundation Geometry</h3>
+ <div class="calc-row">
+ <label>B — Width <span class="calc-unit">(m)</span><input type="number" id="B" step="0.1" value="2.0" min="0.1" max="20" required></label>
+ <label>L — Length <span class="calc-unit">(m)</span><input type="number" id="L" step="0.1" value="2.0" min="0.1" max="50" required>
+ <span class="calc-hint">Strip or square: use B = L</span></label>
+ <label>D<sub>f</sub> — Depth <span class="calc-unit">(m)</span><input type="number" id="Df" step="0.1" value="1.5" min="0" max="20" required></label>
+ <label>Footing type<select id="tipo">
+ <option value="corrida">Strip (L ≫ B)</option>
+ <option value="cuadrada" selected>Square (B = L)</option>
+ <option value="rectangular">Rectangular (B / L)</option>
+ <option value="circular">Circular (B = Ø)</option>
+ </select></label>
+ </div>
+</div>
+
+<div class="calc-section">
+ <h3 class="calc-section-title">Soil and Water Table</h3>
+ <div class="calc-row">
+ <label>γ — Unit weight <span class="calc-unit">(kN/m³)</span><input type="number" id="gamma" step="0.5" value="18" min="10" max="25" required></label>
+ <label>γ<sub>sat</sub> — Saturated <span class="calc-unit">(kN/m³)</span><input type="number" id="gsat" step="0.5" value="19" min="10" max="26">
+ <span class="calc-hint">Default = γ + 1</span></label>
+ <label>D<sub>w</sub> — Water table <span class="calc-unit">(m)</span><input type="number" id="Dw" step="0.1" value="" min="0" max="30" placeholder="empty = no water table">
+ <span class="calc-hint">From surface. Leave empty if no water table</span></label>
+ </div>
+</div>
+
+<div class="calc-section">
+ <h3 class="calc-section-title">Shear Strength</h3>
+ <div class="calc-row">
+ <label>c — Cohesion <span class="calc-unit">(kPa)</span><input type="number" id="c" step="1" value="10" min="0" max="500" required></label>
+ <label>φ — Friction angle <span class="calc-unit">(°)</span><input type="number" id="phi" step="1" value="30" min="0" max="45" required></label>
+ </div>
+</div>
+
+<div class="calc-section">
+ <h3 class="calc-section-title">Load Combination</h3>
+ <div class="calc-row">
+ <label>Combination<select id="combinacion">
+ <option value="estatico">Static</option>
+ <option value="sismico">Seismic</option>
+ <option value="dinamico">Cyclic (non-seismic)</option>
+ </select></label>
+ <label id="lbl-V" style="display:none">V — Vertical load <span class="calc-unit">(kPa)</span><input type="number" id="V" step="10" value="200" min="10" max="2000">
+ <span class="calc-hint">Nominal pressure applied by the structure</span></label>
+ </div>
+</div>
+
+<div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.5rem">
+ <button type="submit">Calculate q<sub>ult</sub> / q<sub>adm</sub></button>
+ <button type="button" id="btn-comparar" style="background:#0f2747">📊 Compare 4 countries</button>
+</div>
+</form>
+<div id="calc-resultado" role="status" aria-live="polite"></div>
+<p class="calc-note" id="calc-note-fs">Vesic factors. FS according to the standard of the selected country (right panel).</p>
+</section>
+
+<aside class="visor-normas-aside" aria-label="Applicable regulatory framework">
+<button type="button" class="visor-mobile-toggle" aria-controls="visor-normas" aria-expanded="false">📖 View regulatory framework</button>
+<div id="visor-normas" class="visor-normas-panel"></div>
+</aside>
+</div>
+<style>
+.calc-widget{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:inherit}
+.calc-widget h2{margin:0 0 .5rem;font-size:1.15rem;color:#0f172a;border:0;padding:0}
+.calc-widget .calc-intro{margin:0 0 1rem;font-size:.88rem;color:#475569}
+.calc-widget .calc-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.75rem;margin-bottom:1rem}
+.calc-widget label{display:flex;flex-direction:column;font-size:.82rem;color:#334155;font-weight:600}
+.calc-widget input,.calc-widget select{margin-top:.3rem;padding:.5rem .6rem;border:1px solid #cbd5e1;border-radius:6px;font-size:.92rem;font-family:inherit;background:#fff}
+.calc-widget input:focus,.calc-widget select:focus{outline:2px solid #0f766e;outline-offset:1px}
+.calc-widget button{background:#0f766e;color:#fff;border:0;padding:.6rem 1.4rem;border-radius:6px;font-weight:600;cursor:pointer;font-size:.92rem}
+.calc-widget button:hover{background:#115e59}
+.calc-widget #calc-resultado{margin-top:1rem;padding:.9rem 1rem;background:#fff;border-left:3px solid #0f766e;border-radius:4px;font-size:.92rem;min-height:1em}
+.calc-widget #calc-resultado:empty{display:none}
+.calc-widget #calc-resultado .ok{color:#166534;font-weight:700;font-size:1.02rem;display:block;margin-bottom:.3rem}
+.calc-widget #calc-resultado .err{color:#b91c1c;font-weight:600}
+.calc-widget .calc-note{margin:1rem 0 0;font-size:.78rem;color:#64748b;font-style:italic}
+.calc-widget .calc-hint{font-size:.7rem;color:#94a3b8;font-weight:400;font-style:italic;margin-left:.3rem}
+.calc-widget .calc-warning{margin-top:.6rem;padding:.55rem .7rem;background:#fef3c7;border-left:3px solid #d97706;border-radius:4px;color:#78350f;font-size:.82rem}
+.calc-widget .sismo-badge{margin-top:.6rem;padding:.5rem .7rem;background:#dbeafe;border-left:3px solid #2563eb;border-radius:4px;color:#1e40af;font-size:.82rem;font-weight:600}
+.calc-widget input:disabled,.calc-widget select:disabled{background:#f1f5f9;color:#94a3b8;cursor:not-allowed}
+.calc-widget #calc-resultado .info-line{display:block;margin-top:.25rem;color:#0f766e;font-size:.85em;font-weight:600}
+.calc-widget #calc-resultado .factors-line{display:block;margin-top:.25rem;color:#64748b;font-size:.78em;font-family:ui-monospace,monospace}
+.calc-widget #btn-comparar{background:#0f2747}
+.calc-widget #btn-comparar:hover{background:#1e3a5f}
+
+/* Modal comparador */
+.cmp-overlay{position:fixed;inset:0;background:rgba(15,23,42,.7);z-index:9998;display:none;align-items:flex-start;justify-content:center;padding:2vh 1rem;overflow-y:auto}
+.cmp-overlay.cmp-open{display:flex}
+.cmp-modal{background:#fff;max-width:1100px;width:100%;border-radius:12px;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.cmp-modal h3{margin:0 0 1rem;color:#0f2747;font-size:1.2rem}
+.cmp-modal-close{float:right;background:none;border:0;font-size:1.5rem;color:#64748b;cursor:pointer;line-height:1;padding:0 .5rem}
+.cmp-table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.88rem}
+.cmp-table th,.cmp-table td{border:1px solid #cbd5e1;padding:.55rem .7rem;text-align:left;vertical-align:top}
+.cmp-table th{background:#0f2747;color:#fff;font-weight:600}
+.cmp-table tbody tr:nth-child(even){background:#f8fafc}
+.cmp-table .cmp-qadm{font-weight:700;color:#0f766e;font-size:1.05em;font-variant-numeric:tabular-nums}
+.cmp-table .cmp-norma-cita{font-size:.74rem;color:#64748b;font-style:italic;display:block;margin-top:.2rem}
+
+/* Badges en visor */
+.visor-normas-panel .vn-badge{display:inline-block;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.08rem .4rem;border-radius:8px;margin-left:.3rem;vertical-align:middle}
+.visor-normas-panel .vn-badge-aplicado{background:#0f766e;color:#fff}
+.visor-normas-panel .vn-badge-info{background:#cbd5e1;color:#334155}
+
+/* Split panel CSS movido a calc.css global (avance 30bis: layout en columna) */
+@media (max-width:1023px){
+ .visor-normas-panel{display:none;margin-top:.6rem;max-height:70vh;overflow-y:auto}
+ .visor-normas-panel.vn-mobile-open{display:block}
+}
+
+/* Header del visor */
+.visor-normas-panel .vn-header{display:flex;flex-direction:column;gap:.6rem;padding-bottom:.7rem;border-bottom:2px solid #00b5a1;margin-bottom:.85rem}
+.visor-normas-panel .vn-title{font-size:.95rem;font-weight:800;color:#0f2747;letter-spacing:.01em}
+.visor-normas-panel .vn-pais-selector{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:#475569}
+.visor-normas-panel .vn-pais-selector label{font-weight:600}
+.visor-normas-panel .vn-pais-selector select{flex:1;padding:.4rem .6rem;border:1px solid #cbd5e1;border-radius:6px;font-size:.85rem;font-family:inherit;background:#fff;color:#0f172a;font-weight:600}
+.visor-normas-panel .vn-pais-selector select:focus{outline:2px solid #00b5a1;outline-offset:1px}
+
+/* Secciones */
+.visor-normas-panel .vn-section{margin-bottom:1rem}
+.visor-normas-panel .vn-section-title{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#0f766e;margin-bottom:.55rem}
+.visor-normas-panel .vn-section-params{background:rgba(255,255,255,.65);border-left:3px solid #0f766e;padding:.6rem .8rem;border-radius:6px}
+
+/* Parámetros */
+.visor-normas-panel .vn-param{margin-bottom:.55rem}
+.visor-normas-panel .vn-param:last-child{margin-bottom:0}
+.visor-normas-panel .vn-param-key{font-weight:600;color:#334155;text-transform:capitalize}
+.visor-normas-panel .vn-param-valor{display:inline-block;background:#0f766e;color:#fff;padding:.05rem .4rem;border-radius:4px;font-weight:700;font-variant-numeric:tabular-nums}
+.visor-normas-panel .vn-param-texto{color:#0f172a}
+.visor-normas-panel .vn-param-fuente{font-size:.74rem;color:#0f766e;font-weight:600;margin-top:.15rem}
+.visor-normas-panel .vn-param-nota{font-size:.74rem;color:#64748b;font-style:italic;margin-top:.1rem}
+
+/* Normas — cards */
+.visor-normas-panel .vn-norma{background:#fff;border:1px solid #cbd5e1;border-radius:8px;padding:.7rem .85rem;margin-bottom:.7rem;font-size:.82rem}
+.visor-normas-panel .vn-norma-cabecera{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin-bottom:.3rem}
+.visor-normas-panel .vn-norma-codigo{font-weight:800;color:#0f2747;font-size:.95rem}
+.visor-normas-panel .vn-norma-anio{color:#64748b;font-weight:600}
+.visor-normas-panel .vn-norma-tipo{margin-left:auto;font-size:.65rem;background:#0f2747;color:#fff;padding:.1rem .45rem;border-radius:9px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.visor-normas-panel .vn-norma-titulo{font-size:.78rem;color:#475569;margin-bottom:.45rem;font-style:italic}
+.visor-normas-panel .vn-articulo{padding:.45rem .55rem;background:#f8fafc;border-left:2px solid #00b5a1;border-radius:4px;margin-bottom:.4rem}
+.visor-normas-panel .vn-articulo-ref{font-weight:700;color:#0f2747;font-size:.78rem;margin-bottom:.2rem}
+.visor-normas-panel .vn-articulo-cita{color:#334155;font-size:.78rem;line-height:1.45;font-style:italic}
+.visor-normas-panel .vn-norma-link{display:inline-block;margin-top:.35rem;font-size:.75rem;color:#0f766e;text-decoration:none;font-weight:600}
+.visor-normas-panel .vn-norma-link:hover{text-decoration:underline}
+</style>
+<script>
+/*
+ * Vesic (1973) Bearing Capacity Calculator — complete formula.
+ * Implements: Nc, Nq, Nγ + shape factors s + depth factors d + water table.
+ * qadm = (qu_net) / FS + γ·Df (NET ALLOWABLE LOAD, adjusted for overburden)
+ *
+ * FS and standard citation come from the viewer according to the selected country.
+ */
+(function(){
+function calcular(){
+ var B=parseFloat(document.getElementById('B').value);
+ var L=parseFloat(document.getElementById('L').value);
+ var Df=parseFloat(document.getElementById('Df').value);
+ var Dw=parseFloat(document.getElementById('Dw').value);
+ var g=parseFloat(document.getElementById('gamma').value);
+ var gsat=parseFloat(document.getElementById('gsat').value);
+ var c=parseFloat(document.getElementById('c').value);
+ var phi=parseFloat(document.getElementById('phi').value);
+ var tipo=document.getElementById('tipo').value;
+ var combinacion=document.getElementById('combinacion').value;
+ var out=document.getElementById('calc-resultado');
+ var note=document.getElementById('calc-note-fs');
+
+ // Physical validations
+ if(!isFinite(B)||!isFinite(L)||!isFinite(Df)||!isFinite(g)||!isFinite(c)||!isFinite(phi)||B<=0||L<=0||g<=0||c<0||phi<0||Df<0){
+ out.innerHTML='<span class="err">Enter positive numeric values in all required fields.</span>';return null;
+ }
+ if(L<B){out.innerHTML='<span class="err">L (length) must be ≥ B (width). If your footing has B>L, swap the values.</span>';return null;}
+ if(!isFinite(gsat)||gsat<g){gsat=g+1;}
+
+ // Footing type → adjustments to B, L
+ if(tipo==='cuadrada'){L=B;}
+ if(tipo==='circular'){L=B;}
+ if(tipo==='corrida'){L=B*100;} // Very large L to force B/L≈0
+
+ // FS from viewer
+ var paramKey=combinacion==='sismico'?'FS_sismico':(combinacion==='dinamico'?'FS_dinamico':'FS_estatico');
+ var FS=3.0,citaFS='—',paisActual='?';
+ var khAplicado=0,khCita='';
+ if(window.VisorNormas){
+ var v=window.VisorNormas.getParam(paramKey);
+ if(typeof v==='number'&&v>0){FS=v;}
+ citaFS=window.VisorNormas.getNormaCita(paramKey)||'—';
+ paisActual=window.VisorNormas.getPais()||'?';
+ if(combinacion==='sismico'){
+ var khv=window.VisorNormas.getParam('kh_horizontal');
+ if(typeof khv==='number'&&khv>0){khAplicado=khv;khCita=window.VisorNormas.getNormaCita('kh_horizontal')||'';}
+ }
+ }
+
+ // Factors Nc Nq Nγ (Vesic)
+ var phir=phi*Math.PI/180;
+ var Nq,Nc,Ng;
+ if(phi===0){Nq=1;Nc=5.14;Ng=0;}
+ else{
+ Nq=Math.exp(Math.PI*Math.tan(phir))*Math.pow(Math.tan(Math.PI/4+phir/2),2);
+ Nc=(Nq-1)/Math.tan(phir);
+ Ng=2*(Nq+1)*Math.tan(phir);
+ }
+
+ // Shape factors sc, sq, sγ (Vesic)
+ var BL=B/L; // dimensionless ratio (strip → ~0)
+ var sc,sq,sg;
+ if(tipo==='circular'){
+ sc=1+(Nq/Nc); sq=1+Math.tan(phir); sg=0.6;
+ } else {
+ sc=1+BL*(Nq/Nc);
+ sq=1+BL*Math.tan(phir);
+ sg=Math.max(0.6, 1-0.4*BL);
+ }
+
+ // Depth factors dq, dc, dγ (Hansen-Vesic)
+ // k = Df/B if Df<=B; atan(Df/B) if Df>B
+ var k=(Df<=B)? (Df/B) : Math.atan(Df/B);
+ var dq=phi===0 ? 1 : 1+2*Math.tan(phir)*Math.pow(1-Math.sin(phir),2)*k;
+ var dc=phi===0 ? 1+0.4*k : dq-(1-dq)/(Nc*Math.tan(phir));
+ var dg=1;
+
+ // Water table — adjustment of γ in the 0.5·γ·B·Nγ term and q in the q·Nq term
+ // Case 1: Dw>=Df+B → no effect
+ // Case 2: Df<=Dw<Df+B → weighted γ in wedge zone: γ_avg = γ' + (Dw-Df)/B·(γ-γ')
+ // Case 3: Dw<Df → also affects overburden q
+ // (γ' = γsat - 9.81 ≈ γsat - 10)
+ var gamma_w=9.81;
+ var gPrime=gsat-gamma_w;
+ var gammaTermNg=g; // γ applied to the 0.5·γ·B·Nγ term
+ var qSobrecarga=g*Df; // base overburden q = γ·Df
+ var notaNapa='';
+ if(isFinite(Dw)&&Dw>=0){
+ if(Dw>=Df+B){
+ notaNapa='Deep water table (Dw≥Df+B): does not affect qu.';
+ } else if(Dw>=Df){
+ // Case 2: water table between Df and Df+B
+ var d=(Dw-Df)/B; // 0 to 1
+ gammaTermNg=gPrime+d*(g-gPrime);
+ notaNapa='Water table between Df and Df+B (Dw='+Dw.toFixed(1)+' m): weighted γ = '+gammaTermNg.toFixed(2)+' kN/m³ in the Nγ term.';
+ } else {
+ // Case 3: water table above Df
+ gammaTermNg=gPrime;
+ qSobrecarga=g*Dw + gPrime*(Df-Dw);
+ notaNapa='Water table above the base (Dw='+Dw.toFixed(1)+' m): γ′ in Nγ and q = γ·Dw + γ′·(Df-Dw) = '+qSobrecarga.toFixed(1)+' kPa.';
+ }
+ }
+
+ // Load inclination factors for seismic (complete Hansen-Vesic)
+ // In seismic: H = kh·V (horizontal load induced by earthquake) → reduces qu via i factors
+ // Fix 3: complete iq formula with cohesion: iq = (1 - H/(V + B'·L'·c·cot φ))^m
+ // Fix 2: validate explicit V>0 + warning if missing
+ var ic=1, iq=1, ig=1, V_in=NaN, H_in=NaN, notaSismo='', warningSismo='';
+ if(combinacion==='sismico'){
+ V_in=parseFloat(document.getElementById('V').value);
+ if(!isFinite(V_in)||V_in<=0){
+ warningSismo='⚠ Seismic combination selected but V (service vertical load) not entered. Result WITHOUT load inclination — may be optimistic. Enter a V > 0 to apply i factors.';
+ } else if(khAplicado>0){
+ H_in=khAplicado*V_in;
+ // m: Hansen exponent for rectangular footing (load inclined in B direction)
+ var m_ratio=B/Math.max(L,B);
+ var m=(2+m_ratio)/(1+m_ratio);
+ // Complete formula with cohesion: denominator includes B·L·c·cot(φ)
+ var denomBase = V_in + (phi>0 ? B*L*c/Math.tan(phir) : 0);
+ var ratio = (denomBase>0) ? Math.max(0, 1 - H_in/denomBase) : Math.max(0, 1 - H_in/Math.max(V_in,1));
+ iq = Math.pow(ratio, m);
+ ig = Math.pow(ratio, m+1);
+ // ic: if φ>0 use derivation from iq; if φ=0 (purely cohesive soils), specific Hansen formula
+ ic = phi>0 ? iq - (1-iq)/(Nc*Math.tan(phir)) : (c>0 ? 1 - (m*H_in)/(B*L*c*Nc) : 1);
+ ic = Math.max(0.1, Math.min(1, ic));
+ notaSismo='Seismic horizontal load: H = kh·V = '+khAplicado.toFixed(2)+' · '+V_in.toFixed(0)+' = '+H_in.toFixed(1)+' kPa. Hansen factors: ic='+ic.toFixed(2)+' · iq='+iq.toFixed(2)+' · iγ='+ig.toFixed(2)+'.';
+ }
+ }
+
+ // qu (complete Vesic with i factors)
+ var qu_termoC = c*Nc*sc*dc*ic;
+ var qu_termoQ = qSobrecarga*Nq*sq*dq*iq;
+ var qu_termoG = 0.5*gammaTermNg*B*Ng*sg*dg*ig;
+ var qult = qu_termoC + qu_termoQ + qu_termoG;
+
+ // NET qadm: (qu - q_overburden)/FS + q_overburden
+ var qadm = (qult - qSobrecarga)/FS + qSobrecarga;
+
+ // Physical warnings
+ var warns=[];
+ if(phi>40 && c>20) warns.push('φ>40° and c>20 kPa simultaneously is unusual: dense granular typically has c≈0.');
+ if(Df>3*B) warns.push('Df > 3·B: the footing is no longer considered shallow. Verify with intermediate/deep foundation calculation.');
+ if(phi===0 && c<5) warns.push('φ=0 and c<5 kPa: very soft soil, very low bearing capacity.');
+ if(qadm<50) warns.push('qadm < 50 kPa: review parameters, soil poorly suited for direct foundation.');
+
+ // Render
+ var html='<span class="ok">qult = '+qult.toFixed(1)+' kPa · qadm (net) = '+qadm.toFixed(1)+' kPa (FS='+FS.toFixed(2)+')</span>';
+ html+='<span class="factors-line">Nc='+Nc.toFixed(2)+' · Nq='+Nq.toFixed(2)+' · Nγ='+Ng.toFixed(2)+
+ ' | sc='+sc.toFixed(2)+' sq='+sq.toFixed(2)+' sγ='+sg.toFixed(2)+
+ ' | dc='+dc.toFixed(2)+' dq='+dq.toFixed(2)+' dγ='+dg.toFixed(2)+'</span>';
+ html+='<span class="factors-line">qu = c·Nc·sc·dc + q·Nq·sq·dq + ½·γ·B·Nγ·sγ·dγ = '+qu_termoC.toFixed(0)+' + '+qu_termoQ.toFixed(0)+' + '+qu_termoG.toFixed(0)+' = '+qult.toFixed(0)+' kPa</span>';
+ html+='<span class="info-line">📍 Applied country: '+paisActual+' · FS '+combinacion+' = '+FS.toFixed(2)+' according to '+citaFS+'</span>';
+ // Fix 8: visible seismic badge if V applied
+ if(combinacion==='sismico'&&isFinite(V_in)&&V_in>0&&khAplicado>0){
+ html+='<div class="sismo-badge">⚡ Seismic active · V = '+V_in.toFixed(0)+' kPa · kh = '+khAplicado.toFixed(2)+' (country '+paisActual+') · ic·iq·iγ applied to qu</div>';
+ }
+ if(warningSismo) html+='<div class="calc-warning">'+warningSismo+'</div>';
+ if(notaSismo) html+='<span class="factors-line">🌊 '+notaSismo+'</span>';
+ if(notaNapa) html+='<span class="factors-line">💧 '+notaNapa+'</span>';
+ for(var i=0;i<warns.length;i++) html+='<div class="calc-warning">⚠ '+warns[i]+'</div>';
+ out.innerHTML=html;
+
+ if(note){note.textContent='FS = '+FS.toFixed(2)+' according to '+citaFS+' — changes if you select another country or combination.';}
+ return {qult:qult, qadm:qadm, FS:FS, citaFS:citaFS, paisActual:paisActual};
+}
+
+var f=document.getElementById('calc-form');if(!f)return;
+f.addEventListener('submit',function(e){e.preventDefault();calcular();});
+
+// Recalculate when country changes
+window.addEventListener('visor-normas:cambio-pais',function(){
+ if(document.getElementById('calc-resultado').innerHTML.trim()!==''){calcular();}
+ var combinacion=document.getElementById('combinacion').value;
+ var paramKey=combinacion==='sismico'?'FS_sismico':(combinacion==='dinamico'?'FS_dinamico':'FS_estatico');
+ var FS=3.0,cita='—';
+ if(window.VisorNormas){var v=window.VisorNormas.getParam(paramKey);if(typeof v==='number'&&v>0)FS=v;cita=window.VisorNormas.getNormaCita(paramKey)||cita;}
+ var n=document.getElementById('calc-note-fs');if(n)n.textContent='FS = '+FS.toFixed(2)+' according to '+cita+' — changes if you select another country or combination.';
+});
+document.getElementById('combinacion').addEventListener('change',function(){
+ // Show/hide V field according to combination
+ var lblV=document.getElementById('lbl-V');
+ if(lblV){lblV.style.display=this.value==='sismico'?'flex':'none';}
+ if(document.getElementById('calc-resultado').innerHTML.trim()!==''){calcular();}
+});
+// Initial state of V field
+(function(){var lblV=document.getElementById('lbl-V');var sel=document.getElementById('combinacion');if(lblV&&sel){lblV.style.display=sel.value==='sismico'?'flex':'none';}})();
+
+// Fix 1: disable L when type ≠ rectangular + synchronise L=B
+function ajustarL(){
+ var tipo=document.getElementById('tipo').value;
+ var Lin=document.getElementById('L');
+ var Bin=document.getElementById('B');
+ if(tipo==='rectangular'){
+ Lin.disabled=false;
+ Lin.title='Length independent of B (rectangular footing)';
+ } else {
+ Lin.disabled=true;
+ Lin.value=Bin.value; // synchronise
+ Lin.title=tipo==='corrida'?'Strip: L treated as ≫B internally':'L=B forced by type '+tipo;
+ }
+}
+document.getElementById('tipo').addEventListener('change',function(){
+ ajustarL();
+ if(document.getElementById('calc-resultado').innerHTML.trim()!==''){calcular();}
+});
+document.getElementById('B').addEventListener('input',function(){
+ // if type is not rectangular, keep L=B
+ var tipo=document.getElementById('tipo').value;
+ if(tipo!=='rectangular'){document.getElementById('L').value=this.value;}
+});
+ajustarL(); // initial state
+document.getElementById('V').addEventListener('input',function(){
+ if(document.getElementById('combinacion').value==='sismico' && document.getElementById('calc-resultado').innerHTML.trim()!==''){calcular();}
+});
+
+// 4-country side-by-side comparator
+document.getElementById('btn-comparar').addEventListener('click',function(){
+ if(!window.VisorNormas||!window.VisorNormas._dataAll){
+ alert('Loading standards, try again in a moment.');return;
+ }
+ // Snapshot current inputs
+ var snap={B:document.getElementById('B').value,L:document.getElementById('L').value,
+ Df:document.getElementById('Df').value,Dw:document.getElementById('Dw').value,
+ gamma:document.getElementById('gamma').value,gsat:document.getElementById('gsat').value,
+ c:document.getElementById('c').value,phi:document.getElementById('phi').value,
+ tipo:document.getElementById('tipo').value,combinacion:document.getElementById('combinacion').value,
+ V:document.getElementById('V').value};
+ var paisOriginal=window.VisorNormas.getPais();
+ var resultados=[];
+ var dataAll=window.VisorNormas._dataAll;
+ Object.keys(dataAll.paises).forEach(function(p){
+ window.VisorNormas._setPais(p);
+ var res=calcular();
+ if(res){
+ var pData=dataAll.paises[p];
+ // Extract regulatory info (not calculated)
+ // Fix 6: kh with brief representative zone (extracted from JSON note)
+ var khP=pData.params.kh_horizontal;
+ var khInfo='—';
+ if(khP){
+ var nota=khP.nota||'';
+ // extract "Zone X" or segment between parentheses
+ var zonaMatch=nota.match(/\(([^)]+)\)/);
+ var zonaStr=zonaMatch?zonaMatch[1]:nota.split('—')[0].trim();
+ // toFixed(3) then trim trailing zeros so 0.20→"0.20", 0.075→"0.075"
+ var khStr=khP.valor.toFixed(3).replace(/0$/,'').replace(/\.$/,'');
+ khInfo=khStr+' · '+zonaStr.slice(0,50);
+ }
+ var vs30=pData.params.Vs30_umbral_A? pData.params.Vs30_umbral_A.valor : (pData.params.Vs30_umbral_I? pData.params.Vs30_umbral_I.valor : '—');
+ var exencion=pData.params.exencion_EMS? pData.params.exencion_EMS.texto.split(':')[0]:'—';
+ // Fix 7: extract i factors from rendered DOM (calculated by calcular())
+ var domI={ic:1,iq:1,ig:1};
+ var factoresMatch=document.getElementById('calc-resultado').innerHTML.match(/ic=([\d.]+)\s*·\s*iq=([\d.]+)\s*·\s*iγ=([\d.]+)/);
+ if(factoresMatch){domI.ic=parseFloat(factoresMatch[1]);domI.iq=parseFloat(factoresMatch[2]);domI.ig=parseFloat(factoresMatch[3]);}
+ resultados.push({pais:p,label:pData.label_largo||pData.label,
+ qult:res.qult,qadm:res.qadm,FS:res.FS,cita:res.citaFS,
+ khInfo:khInfo, vs30:vs30, exencion:exencion,
+ ic:domI.ic,iq:domI.iq,ig:domI.ig});
+ }
+ });
+ // Restore original country
+ window.VisorNormas._setPais(paisOriginal);
+ calcular();
+
+ // Render modal
+ var combinacionLabel={estatico:'Static',sismico:'Seismic',dinamico:'Cyclic'}[snap.combinacion];
+ var html='<button class="cmp-modal-close" aria-label="Close">×</button>';
+ html+='<h3>Comparison between 4 countries — '+combinacionLabel+' combination</h3>';
+ var inputsTxt='B='+snap.B+', L='+snap.L+', Df='+snap.Df+', γ='+snap.gamma+', c='+snap.c+', φ='+snap.phi+'°';
+ if(snap.combinacion==='sismico') inputsTxt+=', V='+snap.V+' kPa';
+ html+='<p style="font-size:.85rem;color:#475569;margin:.4rem 0 .8rem">Same inputs ('+inputsTxt+'), different country and standard.</p>';
+
+ // Table 1: Calculation (qult, FS, qadm) — with i factors if seismic
+ html+='<h4 style="margin:.8rem 0 .3rem;color:#0f2747;font-size:.95rem">📐 Calculation result</h4>';
+ var esSismica=(snap.combinacion==='sismico');
+ html+='<table class="cmp-table"><thead><tr><th>Country</th><th>qult (kPa)</th><th>FS</th>';
+ if(esSismica){html+='<th>i factors (ic·iq·iγ)</th>';}
+ html+='<th>qadm net (kPa)</th><th>Applied FS standard</th></tr></thead><tbody>';
+ resultados.forEach(function(r){
+ html+='<tr><td><strong>'+r.label+'</strong></td><td>'+r.qult.toFixed(1)+'</td>';
+ html+='<td>'+r.FS.toFixed(2)+'</td>';
+ if(esSismica){
+ html+='<td style="font-size:.78rem;color:#0f766e">'+r.ic.toFixed(2)+' · '+r.iq.toFixed(2)+' · '+r.ig.toFixed(2)+'</td>';
+ }
+ html+='<td class="cmp-qadm">'+r.qadm.toFixed(1)+'</td>';
+ html+='<td><span class="cmp-norma-cita">'+r.cita+'</span></td></tr>';
+ });
+ html+='</tbody></table>';
+
+ // Table 2: Regulatory framework (non-calculated info)
+ html+='<h4 style="margin:1.1rem 0 .3rem;color:#0f2747;font-size:.95rem">🌐 Regulatory framework (supplementary information)</h4>';
+ html+='<table class="cmp-table"><thead><tr><th>Country</th><th>Seismic kh (representative zone)</th><th>Vs30 — Stiffest Site Class in the country</th><th>EMS exemption</th></tr></thead><tbody>';
+ resultados.forEach(function(r){
+ html+='<tr><td><strong>'+r.label+'</strong></td>';
+ html+='<td style="font-size:.8rem">'+r.khInfo+'</td>';
+ html+='<td>'+r.vs30+'</td>';
+ html+='<td style="font-size:.8rem">'+r.exencion+'</td></tr>';
+ });
+ html+='</tbody></table>';
+ // Fix 5: explanatory note on Vs30
+ html+='<p style="font-size:.72rem;color:#94a3b8;margin:.3rem 0 0;font-style:italic">⚠ Vs30 note: classes A/I are not directly comparable between standards — each country defines different thresholds for "hard rock". A site with Vs30=1000 m/s would be Site Class A in Chile (≥900) but Class B in USA (≥1500).</p>';
+
+ html+='<p style="font-size:.78rem;color:#64748b;margin-top:.8rem;font-style:italic">'; if(snap.combinacion==='estatico'){ html+='In the static combination, all 4 countries share FS=3.0 (international consensus). To see the difference in qadm, change to the seismic combination and enter V — the load inclination factors (ic, iq, iγ) vary according to kh by country.'; } else if(snap.combinacion==='sismico'){ html+='In seismic, USA applies FS=2.5 (more conservative), UK/ES/BR apply FS=2.0. Also the kh values vary: USA 0.30 (high seismic CA) → UK 0.20 (Zone 3 BSI standard) → ES 0.10 → BR 0.075. This reduces qu due to load inclination.'; } else { html+='For non-seismic cyclic loads, BSI standard is the most conservative (FS=4.0).'; } html+='</p>';
+ var ov=document.querySelector('.cmp-overlay');
+ if(!ov){
+ ov=document.createElement('div');ov.className='cmp-overlay';
+ ov.innerHTML='<div class="cmp-modal" role="dialog" aria-modal="true"></div>';
+ document.body.appendChild(ov);
+ ov.addEventListener('click',function(e){if(e.target===ov)ov.classList.remove('cmp-open');});
+ }
+ ov.querySelector('.cmp-modal').innerHTML=html;
+ ov.querySelector('.cmp-modal-close').addEventListener('click',function(){ov.classList.remove('cmp-open');});
+ ov.classList.add('cmp-open');
+});
+})();
+// Toggle mobile drawer
+(function(){
+ var btn=document.querySelector('.visor-mobile-toggle');
+ var panel=document.getElementById('visor-normas');
+ if(!btn||!panel)return;
+ btn.addEventListener('click',function(){
+ var isOpen=panel.classList.toggle('vn-mobile-open');
+ btn.setAttribute('aria-expanded',isOpen?'true':'false');
+ btn.textContent=isOpen?'✕ Close regulatory framework':'📖 View regulatory framework';
+ });
+})();
+</script>
+<script src="/widgets/visor-normas.js" data-slug="capacidad-portante-terzaghi-vesic"></script>
+
+<h2>Calculation example</h2>
+<table class="ejemplo">
+<caption>Input data — isolated footing for a residential building in an urban area</caption>
+<thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>B × L (width × length)</td><td>2.0 × 2.0 m</td></tr>
+<tr><td>Embedment depth Df</td><td>1.5 m</td></tr>
+<tr><td>Cohesion c</td><td>10 kPa</td></tr>
+<tr><td>Friction angle φ</td><td>30°</td></tr>
+<tr><td>Unit weight γ</td><td>18 kN/m³</td></tr>
+<tr><td>Water table</td><td>Not detected within 5 m</td></tr>
+<tr><td>Static FS</td><td>3.0</td></tr>
+</tbody>
+</table>
+<p>Factors with φ = 30°: Nq = e^(π·0.577) · tan²60° = 6.40 · 3.0 = 18.4; Nc = (18.4 − 1) / 0.577 = 30.1; Nγ = 2 · 19.4 · 0.577 = 22.4. Overburden q = γ · Df = 18 · 1.5 = 27 kPa. Shape factors (B/L = 1): sc = 1 + 1·(18.4/30.1) = 1.61; sq = 1 + 1·0.577 = 1.58; sγ = 1 − 0.4 = 0.6. Depth factors (Df/B = 0.75): dq = 1 + 2·0.577·(1 − 0.5)² · 0.75 = 1 + 0.217 = 1.22; dc ≈ 1.23; dγ = 1. qu = 10·30.1·1.61·1.23 + 27·18.4·1.58·1.22 + 0.5·18·2·22.4·0.6·1 = 596 + 957 + 242 = 1 795 kPa. qadm = (1 795 − 27) / 3 + 27 = 616 kPa.</p>
+<p class="resultado"><strong>Result:</strong> qu = 1 795 kPa · qadm = 616 kPa (FS = 3, static).</p>
+
+<h2>Interpretation of results</h2>
+<p>An allowable capacity of 616 kPa is high and typical of dense sandy soil with apparent cohesion. For actual design, settlements must also be verified (Schmertmann or elastic) because they often govern over bearing capacity. In the presence of a water table below the footing, γ must be replaced by γ' = γsat − γw in the affected terms, which can reduce qadm by 30-50 %. In seismic zones, BS EN 1997-1 allows FS = 2 for combinations with earthquake.</p>
+
+<h2>Reference standards</h2>
+<ul>
+<li>BS EN 1997-1:2004 — Geotechnical design — Part 1: General rules (Eurocode 7)</li>
+<li>BS EN 1997-1:2004 — Chapter on foundations and retaining walls</li>
+<li>Terzaghi, K. (1943). Theoretical Soil Mechanics</li>
+<li>Vesic, A.S. (1973). Analysis of ultimate loads of shallow foundations</li>
+<li>Meyerhof, G.G. (1963). Some recent research on bearing capacity</li>
+<li>BS EN 1997-1:2004 and BS EN 1998-5:2004 — Seismic combinations</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details><summary>When do I use Terzaghi and when Vesic?</summary><p>Classic Terzaghi is useful for quick manual verification with strip footings without load inclination or water table. Vesic is the general formulation and is recommended in current practice because it incorporates shape, depth, inclination, and inclined base factors. BS EN 1997-1 accepts both as long as the assumptions are documented.</p></details>
+<details><summary>What factor of safety should I use?</summary><p>For static combinations, FS = 3.0 is the traditional minimum. BS EN 1997-1 allows FS = 2.0 for combinations with severe earthquake. If there are cyclic loads without earthquake (machinery), it is increased to FS = 4.0. LRFD designs use resistance factors (0.45-0.60) instead of a global FS.</p></details>
+<details><summary>How is the water table treated?</summary><p>If the water table is above the footing base, all γ in the affected terms are replaced by γ'. If it is between the base and Df, it is weighted according to depth. If it is below the footing at more than 1·B, it does not significantly affect. It is a frequent error to forget this adjustment: it can overestimate qu by 30-50 %.</p></details>
+<details><summary>Does bearing capacity or settlement govern the design?</summary><p>In dense granular soils and rocks, bearing capacity is usually conservative and settlement governs. In soft clays and compressible silts, the opposite is true. Designing only for bearing capacity without verifying settlement is poor practice that can lead to building collapse due to excessive differential settlements.</p></details>
+
+<h2>Related calculators</h2>
+<ul>
+<li><a href="/">Elastic settlement — Schmertmann method</a></li>
+<li><a href="/">1D Terzaghi consolidation</a></li>
+<li><a href="/">Wall verification — FS overturning and sliding</a></li>
+<li><a href="/">SPT — correlations for φ, Dr, Su</a></li>
+</ul>
+
+
+
+</article>
+
+
+<!-- AUTO-INTERNAL-LINKS -->
+<aside class="related-calcs" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:20px 24px;margin:32px auto;max-width:1100px;font-family:'Inter',sans-serif">
+ <h3 style="font-size:0.95rem;color:#1e3a5f;margin:0 0 12px;font-weight:700">Related Bearing Capacity Calculators</h3>
+ <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px 16px">
+ <li><a href="/" style="color:#0d9488;text-decoration:none;font-weight:500">Elastic Settlement Calculator — Schmertmann</a></li>
+ <li><a href="/" style="color:#0d9488;text-decoration:none;font-weight:500">Pile Axial Capacity Calculator — tip, shaft and allowable</a></li>
+ <li><a href="/" style="color:#0d9488;text-decoration:none;font-weight:500">1D Consolidation Calculator — Terzaghi</a></li>
+ <li><a href="/" style="color:#0d9488;text-decoration:none;font-weight:500">3D Consolidation Calculator — Mandel-Cryer Effect</a></li>
+ </ul>
+ <p style="font-size:0.8rem;color:#64748b;margin:14px 0 0">
+ More tools at <a href="/" style="color:#0d9488">Bearing Capacity</a> · Return to
+ <a href="/" style="color:#0d9488">Geotechnical Engineering Limited index</a>
+ </p>
+</aside>
+</article>
+</main>
+<footer>
+<div class="container">
+<div>
+<h4>Geotechnical Engineering Limited</h4>
+<p>Professional geotechnical services (United Kingdom).</p>
+<p class="footer-designer-credit">Site designed by geotechnical team</p>
+</div>
+<div>
+<h4>Contact</h4>
+<p>Email: <a href="mailto:contact@geotechnicalengineeringlimited.uk">contact@geotechnicalengineeringlimited.uk</a></p>
+</div>
+<div>
+<h4>Services</h4>
+<p><a href="/spt-boring/">SPT Boring</a><br><a href="/soil-mechanics-laboratory/">Soil Mechanics Laboratory</a><br><a href="/slope-stability/">Slope Stability</a><br><a href="/retaining-wall-design/">Retaining Wall Design</a></p>
+</div>
+<div>
+<h4>Legal</h4>
+<p><a href="/sitemap.xml">Sitemap</a></p>
+</div>
+<div class="copyr">© 2026 Geotechnical Engineering Limited</div>
+</div>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://geotechnicalengineeringlimited.uk/"}, {"@type": "ListItem", "position": 2, "name": "Terzaghi and Vesic Bearing Capacity Calculator", "item": "https://geotechnicalengineeringlimited.uk/blog/calculators/capacidad-portante-terzaghi-vesic/"}]}, {"@type": "Article", "headline": "Terzaghi and Vesic Bearing Capacity Calculator", "inLanguage": "en", "description": "The ultimate bearing capacity qu and allowable bearing capacity qadm define the pressure that a footing can transmit to the ground without shear failure or", "url": "https://geotechnicalengineeringlimited.uk/blog/calculators/capacidad-portante-terzaghi-vesic/", "mainEntityOfPage": "https://geotechnicalengineeringlimited.uk/blog/calculators/capacidad-portante-terzaghi-vesic/", "publisher": {"@type": "Organization", "name": "Geotechnical Engineering Limited", "url": "https://geotechnicalengineeringlimited.uk/"}}]}</script>
+</body>
+</html>
